@@ -1,1 +1,12 @@
-<p>logros works!</p>
+<section class="logros">
+  <div *ngFor="let logro of logros" class="logro-card">
+    <div class="header">
+      <h3>{{ logro.titulo }}</h3>
+      <span class="puntos">{{ logro.puntos }} pts</span>
+    </div>
+    <p>{{ logro.descripcion }}</p>
+    <p *ngIf="logro.fechaDesbloqueo" class="fecha">
+      Desbloqueado: {{ logro.fechaDesbloqueo | date:'longDate' }}
+    </p>
+  </div>
+</section>

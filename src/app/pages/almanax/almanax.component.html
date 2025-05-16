@@ -1,1 +1,18 @@
-<p>almanax works!</p>
+<section class="almanax">
+  <mat-calendar
+    [selected]="selectedDate"
+    (selectedChange)="dateSelected($event)"
+    [dateClass]="dateClass">
+  </mat-calendar>
+
+  <div *ngIf="ofrendaActual" class="detalle-ofrenda">
+    <h3>{{ ofrendaActual.bonus }}</h3>
+    <p>{{ ofrendaActual.descripcion }}</p>
+    <p *ngIf="ofrendaActual.recompensa" class="recompensa">
+      🎁 {{ ofrendaActual.recompensa }}
+    </p>
+  </div>
+  <div *ngIf="!ofrendaActual" class="sin-ofrenda">
+    <p>No hay datos de ofrenda para la fecha seleccionada.</p>
+  </div>
+</section>

@@ -1,1 +1,11 @@
-<p>misiones works!</p>
+<section class="misiones">
+  <div *ngFor="let mision of misiones" class="mision-card">
+    <h3>{{ mision.titulo }}</h3>
+    <p>{{ mision.descripcion }}</p>
+    <p *ngIf="mision.nivelRequisito">Nivel mínimo: {{ mision.nivelRequisito }}</p>
+    <h4>Recompensas:</h4>
+    <ul>
+      <li *ngFor="let recompensa of mision.recompensas">{{ recompensa }}</li>
+    </ul>
+  </div>
+</section>
