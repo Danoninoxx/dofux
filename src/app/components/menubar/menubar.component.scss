@@ -1,0 +1,122 @@
+.menubar {
+    background-color: #222;
+    padding: 10px 0;
+    border-radius: 4px;
+    display: flex; /* Usamos flexbox para organizar los elementos */
+    align-items: center; /* Alineamos verticalmente */
+    justify-content: space-between; /* Espaciamos el logo, menú y botón */
+  }
+  
+  .menubar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Esto asegura que el menú ocupe todo el espacio disponible */
+  }
+  
+  .menubar li {
+    padding: 10px 20px;
+    color: rgb(93, 203, 124);
+    cursor: pointer;
+  }
+  
+  .menubar li:hover {
+    background-color: #555;
+  }
+  
+  .logo {
+    height: 80px;
+    margin-left: 80px;
+    margin-right: 10px;
+  }
+  
+  .login-section {
+    margin-left: auto;      /* Empuja el contenedor a la derecha */
+    margin-right: 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column; /* Los botones en columna */
+    align-items: center;
+  }
+
+  .login-section button {
+    width: auto;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-bottom: 10px; /* Espacio entre botones */
+  }
+
+  .login-button {
+    background-color: #f57c00;
+    color: white;
+  }
+  
+  .login-button:hover {
+    background-color: #e65100;
+  }
+  
+  .logout-button {
+    background-color: #d32f2f;
+    color: white;
+  }
+  
+  .logout-button:hover {
+    background-color: #b71c1c;
+  }
+
+  .characters-button {
+    background-color: white;
+    color: white;
+    width: 20px;
+  }
+  
+  .characters-button:hover {
+    background-color: #5889ba;
+  }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  @media (max-width: 1400px) {
+    .menubar {
+      position: relative; /* Para posicionar el menú desplegable */
+  
+      .menu-toggle {
+        display: block;
+      }
+  
+      /* Oculta el menú por defecto y lo muestra en forma de menú desplegable */
+      ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 140px;
+        background-color: #444;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  
+        li {
+          margin: 10px 0;
+        }
+      }
+  
+      /* Cuando menuOpen sea true, se aplica la clase .open y se muestra el menú */
+      ul.open {
+        display: flex;
+      }
+    }
+  }
+  

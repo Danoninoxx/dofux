@@ -1,0 +1,9 @@
+<div class="mazmorras-list">
+  <div *ngFor="let dung of dungeons" class="mazmorra-item" (click)="verDetalle(dung.id)">
+    <div class="mazmorra-header">
+      <img *ngIf="dung.image" [src]="dung.image" [alt]="dung.name" />
+      <h2>{{ dung.name }}</h2>
+    </div>
+    <p>{{ dung.level }}</p>
+  </div>
+</div>

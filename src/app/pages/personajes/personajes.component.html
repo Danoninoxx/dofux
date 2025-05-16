@@ -1,0 +1,95 @@
+<div class="personajes-container">
+  <!-- Si ya existe personaje, se muestran sus datos -->
+  <div *ngIf="hasCharacter; else createForm" class="personaje-datos">
+    <h2>Tu Personaje</h2>
+    <img 
+      *ngIf="character?.character_img" 
+      [src]="character?.character_img" 
+      [alt]="character?.name" 
+      class="clase-img"
+    />
+    <button (click)="irAModelo3D()" class="btn-model">
+      <i class="fa fa-user"></i>
+      Modelo3D
+    </button>
+    <p><strong>Nombre:</strong> {{ character?.name }}</p>
+    <p><strong>Nivel:</strong> {{ character?.level }}</p>
+    <p><strong>Clase:</strong> {{ character?.clase }}</p>
+
+    <!-- Oficios -->
+    <h3>Oficios</h3>
+    <ul>
+      <li *ngFor="let oficio of character?.oficios">
+        <div class="text-content">
+          <span>{{ oficio.oficio_name }}</span>Nivel:
+          <span *ngIf="!oficio.editing">{{ oficio.nivel }}</span>
+          <input
+            *ngIf="oficio.editing"
+            type="number"
+            [(ngModel)]="oficio.nivel"
+            min="1"
+            style="width: 50px;"
+          />
+        </div>
+
+        <button
+          *ngIf="!oficio.editing"
+          class="btn-edit"
+          (click)="oficio.editing = true"
+        >
+          <i class="fa fa-pencil-alt"></i>
+        </button>
+    
+        <button
+          *ngIf="oficio.editing"
+          class="btn-save"
+          (click)="updateOficioNivel(oficio)"
+        >
+          <i class="fa fa-check"></i>
+        </button>
+      </li>
+    </ul>    
+    
+  </div>
+
+  <!-- Formulario si no hay personaje -->
+  <ng-template #createForm>
+    <h2>No tienes personaje. ¡Crea uno!</h2>
+    <form (ngSubmit)="createCharacter()">
+      <div>
+        <label for="name">Nombre</label>
+        <input
+          id="name"
+          [(ngModel)]="newCharacter.name"
+          name="name"
+          required
+        />
+      </div>
+      <div>
+        <label for="level">Nivel</label>
+        <input
+          id="level"
+          type="number"
+          [(ngModel)]="newCharacter.level"
+          name="level"
+          required
+        />
+      </div>
+      <div>
+        <label for="clase">Clase</label>
+        <select
+          id="clase"
+          [(ngModel)]="newCharacter.clase"
+          name="clase"
+          required
+        >
+          <option value="" disabled selected>Selecciona una clase</option>
+          <option *ngFor="let c of classesList" [value]="c.title">
+            {{ c.title }}
+          </option>
+        </select>
+      </div>
+      <button type="submit">Crear Personaje</button>
+    </form>
+  </ng-template>
+</div>

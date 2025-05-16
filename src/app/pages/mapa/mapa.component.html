@@ -1,0 +1,9 @@
+<div class="mapa-container">
+    <img 
+      src="https://rlbiyutqnrtqbhlnsgby.supabase.co/storage/v1/object/public/map//DofusMap.webp" 
+      alt="Mapa del juego" 
+      class="mapa-image" 
+      [style.transformOrigin]="transformOrigin"
+      [class.zoomed]="zoomed" 
+      (click)="toggleZoom($event)" />
+  </div>

@@ -1,0 +1,17 @@
+<div class="bestia-detail-container">
+    <div class="bestia-detail-card">
+        <button (click)="goBack()" class="back-btn">← Volver</button>
+      <div class="bestia-header">
+        <img 
+          *ngIf="bestia?.image" 
+          [src]="bestia?.image" 
+          [alt]="bestia?.name" 
+          class="bestia-img"
+        />
+        <h1>{{ bestia?.name }}</h1>
+      </div>
+      <p class="bestia-description">
+        {{ bestia?.description }}
+      </p>
+    </div>
+  </div>

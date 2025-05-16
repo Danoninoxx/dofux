@@ -1,0 +1,17 @@
+<div class="oficio-detail-container">
+    <div class="oficio-detail-card">
+        <button (click)="goBack()" class="back-btn">← Volver</button>
+      <div class="oficio-header">
+        <img 
+          *ngIf="oficio?.oficio_logo" 
+          [src]="oficio?.oficio_logo" 
+          [alt]="oficio?.oficio_name" 
+          class="oficio-img"
+        />
+        <h1>{{ oficio?.oficio_name }}</h1>
+      </div>
+      <p class="oficio-description">
+        {{ oficio?.oficio_desc }}
+      </p>
+    </div>
+  </div>

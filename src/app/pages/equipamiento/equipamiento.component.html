@@ -1,0 +1,19 @@
+<div class="equipamiento-container">
+  <div class="filtro-container">
+    <select [(ngModel)]="selectedType" (change)="filterEquipo()">
+      <option value="">Todos los tipos</option>
+      <option *ngFor="let type of tiposEquipo" [value]="type">
+        {{ type }}
+      </option>
+    </select>
+  </div>
+  <div class="equipamiento-list">
+    <div *ngFor="let item of equipo" class="equipo-item" (click)="verDetalle(item.id)">
+      <div class="equipo-header">
+        <img *ngIf="item.image" [src]="item.image" [alt]="item.name" />
+        <h2>{{ item.name }}</h2>
+      </div>
+      <p>{{ item.type }}</p>
+    </div>
+  </div>
+</div>

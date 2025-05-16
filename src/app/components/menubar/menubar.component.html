@@ -1,0 +1,17 @@
+<nav class="menubar">
+  <div class="logo-container">
+    <img src="assets/DofuxLogo.png" alt="DofuX Logo" class="logo" />
+  </div>
+
+  <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+
+  <ul [class.open]="menuOpen">
+    <li *ngFor="let item of menuItems" (click)="onSelectItem(item)">{{ item }}</li>
+  </ul>
+
+  <div class="login-section">
+    <button class="login-button" *ngIf="!isLoggedIn" (click)="goToLogin()">Login</button>
+    <button class="logout-button" *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+    <button class="characters-button" (click)="goToCharacters()">👤</button>
+  </div>
+</nav>

@@ -1,0 +1,28 @@
+<div class="inicio-container">
+  <img src="assets/DofusOriginal.png" alt="DofuX Logo" class="logo">
+  <ng-container *ngIf="username; else notLoggedIn">
+    <!-- Logged in state -->
+    <h1>Bienvenido, {{ username }}</h1>
+    <p>Explora el mundo de Dofus con guías, estrategias y herramientas.</p>
+    <br>
+    <p>Si eres nuevo, te recomendamos empezar por las siguientes secciones:</p>
+    <button (click)="irAGuia()" class="btn">Guía del Principiante</button>
+    <button (click)="irAClases()" class="btn">Explorar Clases</button>
+    <button (click)="irAEquipamiento()" class="btn">Elige tu Equipamiento</button>
+  </ng-container>
+
+  <ng-template #notLoggedIn>
+    <!-- Guest state -->
+    <h1>Bienvenido a DofuX</h1>
+    <div class="guest-options">
+      <div class="option">
+        <p>Inicia sesión para continuar</p>
+        <button (click)="goToLogin()" class="btn">Login</button>
+      </div>
+      <div class="option">
+        <p>Si no tienes cuenta, puedes registrarte aquí</p>
+        <button (click)="goToRegister()" class="btn">Regístrate</button>
+      </div>
+    </div>
+  </ng-template>
+</div>

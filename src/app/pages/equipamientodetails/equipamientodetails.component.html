@@ -1,0 +1,18 @@
+<div class="equipo-detail-container">
+    <div class="equipo-detail-card">
+        <button (click)="goBack()" class="back-btn">← Volver</button>
+      <div class="equipo-header">
+        <img 
+          *ngIf="equipo?.image" 
+          [src]="equipo?.image" 
+          [alt]="equipo?.name" 
+          class="equipo-img"
+        />
+        <h1>{{ equipo?.name }}</h1>
+      </div>
+      <h2>{{ equipo?.type }}</h2>
+      <p class="equipo-description">
+        {{ equipo?.description }}
+      </p>
+    </div>
+  </div>

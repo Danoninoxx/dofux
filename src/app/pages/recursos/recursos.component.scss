@@ -1,0 +1,42 @@
+.recursos-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .recurso-item {
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    cursor: pointer;
+    
+    .recurso-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      
+      img {
+        max-width: 100px;
+        height: auto;
+        margin-right: 10px;
+        border-radius: 4px;
+      }
+  
+      h2 {
+        margin: 0;
+      }
+    }
+  
+    p {
+      margin: 0;
+    }
+  }
+  
+  .recurso-item:hover {
+    background-color: #a07c36;
+  }

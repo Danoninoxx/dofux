@@ -1,0 +1,19 @@
+.container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ceaf89, #aa6e29);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+  
+  main {
+    flex: 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }

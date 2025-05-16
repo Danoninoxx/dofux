@@ -1,0 +1,8 @@
+<div class="bestiario-list">
+    <div *ngFor="let item of bestiario" class="bestia-item" (click)="verDetalle(item.id)">
+      <div class="bestia-header">
+        <img *ngIf="item.image" [src]="item.image" [alt]="item.name" />
+        <h2>{{ item.name }}</h2>
+      </div>
+    </div>
+  </div>

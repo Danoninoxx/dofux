@@ -1,0 +1,24 @@
+<div class="mazmorra-detail-container">
+    <div class="mazmorra-detail-card">
+        <button (click)="goBack()" class="back-btn">← Volver</button>
+      <div class="mazmorra-header">
+        <img 
+          *ngIf="dung?.image" 
+          [src]="dung?.image" 
+          [alt]="dung?.name" 
+          class="mazmorra-img"
+        />
+        <h1>{{ dung?.name }}</h1>
+      </div>
+      <p class="mazmorra-description">
+        {{ dung?.description }}
+      </p>
+      <div class="encounter-container">
+        <h2>Información</h2>
+        <p><strong>Jefe:</strong> {{ dung?.stats?.jefe }}</p>
+        <p><strong>Ubicación:</strong> {{ dung?.stats?.ubication }}</p>
+        <p><strong>Dificultad:</strong> {{ dung?.stats?.dificultad }}</p>
+        <p><strong>Recomendado:</strong> {{ dung?.stats?.recomendado }}</p>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,18 @@
+<div class="clase-detail-container">
+    <div class="clase-detail-card">
+        <button (click)="goBack()" class="back-btn">← Volver</button>
+      <div class="clase-header">
+        <img 
+          *ngIf="clase?.image" 
+          [src]="clase?.image" 
+          [alt]="clase?.title" 
+          class="clase-img"
+        />
+        <h1>{{ clase?.title }}</h1>
+      </div>
+      <p class="clase-description">
+        {{ clase?.description }}
+      </p>
+    </div>
+  </div>
+  

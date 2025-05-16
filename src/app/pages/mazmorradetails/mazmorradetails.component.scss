@@ -1,0 +1,81 @@
+.mazmorra-detail-container {
+    /* Centrar el contenido en la página */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px 0;
+    /* Si tienes un background general en el body o un gradiente, no lo dupliques aquí */
+  }
+  
+  .mazmorra-detail-card {
+    /* Tamaño máximo para no ocupar todo el ancho */
+    max-width: 800px;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.1); 
+    /* Un fondo semitransparente si tienes un background con gradiente detrás */
+    backdrop-filter: blur(8px);
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    color: #fff; /* Asumiendo que tu fondo es oscuro */
+  }
+  
+  /* Encabezado: imagen + título */
+  .mazmorra-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  
+    h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+  }
+  
+  .mazmorra-img {
+    width: 300px;    /* Ajusta el tamaño del logo */
+    height: auto;
+  }
+  
+  .mazmorra-description {
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 0;
+    color: #f1f1f1; /* Ajusta según el contraste deseado */
+  }
+  .back-btn {
+    background-color: #B0883E; 
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 15px;
+    &:hover {
+      background-color: #a07c36;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .mazmorra-detail-card {
+      padding: 15px;
+    }
+  
+    .mazmorra-header {
+      flex-direction: column;
+      align-items: center;
+  
+      .mazmorra-img {
+        margin-bottom: 10px;
+      }
+  
+      h1 {
+        margin-left: 0;
+        text-align: center;
+      }
+    }
+  }
+  

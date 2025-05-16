@@ -1,0 +1,13 @@
+<div class="clases-list">
+  <button *ngIf="isAdmin" (click)="goToAdminPanel()" class="btn admin-btn">
+    Admin Panel
+  </button>
+    <div *ngFor="let clase of classes" class="clase-item" (click)="verDetalle(clase.id)">
+      <div class="clase-header">
+        <img *ngIf="clase.class_logo" [src]="clase.class_logo" [alt]="clase.title" />
+        <h2>{{ clase.title }}</h2>
+      </div>
+      <p>{{ clase.short_desc }}</p>
+    </div>
+  </div>
+  

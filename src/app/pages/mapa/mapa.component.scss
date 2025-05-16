@@ -1,0 +1,20 @@
+.mapa-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .mapa-image {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: ease-out 0.3s;
+    transform: scale(1);
+  }
+  
+  .mapa-image.zoomed {
+    transform: scale(2);
+  }
+  
+  

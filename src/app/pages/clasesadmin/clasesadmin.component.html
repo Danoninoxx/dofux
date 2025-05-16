@@ -1,0 +1,79 @@
+<div class="admin-container">
+    <h1>Administrar Clases</h1>
+  
+    <!-- Botón para insertar nueva clase -->
+    <button (click)="newClase()" class="btn new-btn">Nueva Clase</button>
+  
+    <!-- Tabla de clases -->
+    <table class="clases-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let clase of clases">
+          <td>{{ clase.id }}</td>
+          <td>{{ clase.title }}</td>
+          <td>
+            <button (click)="editClase(clase)" class="btn edit-btn">Editar</button>
+            <button (click)="deleteClase(clase)" class="btn delete-btn">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Formulario para crear/editar -->
+    <div class="form-overlay" *ngIf="showForm">
+      <div class="form-container">
+        <h2 *ngIf="!isEditMode">Crear Nueva Clase</h2>
+        <h2 *ngIf="isEditMode">Editar Clase</h2>
+  
+        <label for="title">Título:</label>
+        <input
+          id="title"
+          [(ngModel)]="selectedClase.title"
+          name="title"
+          type="text"
+        />
+  
+        <label for="logo">Logo (URL):</label>
+        <input
+          id="logo"
+          [(ngModel)]="selectedClase.class_logo"
+          name="logo"
+          type="text"
+        />
+
+        <label for="image">Imagen (URL):</label>
+        <input
+          id="image"
+          [(ngModel)]="selectedClase.image"
+          name="image"
+          type="text"
+        />
+  
+        <label for="short">Descripción Corta:</label>
+        <textarea
+          id="short"
+          [(ngModel)]="selectedClase.short_desc"
+          name="short"
+        ></textarea>
+  
+        <label for="desc">Descripción Larga:</label>
+        <textarea
+          id="desc"
+          [(ngModel)]="selectedClase.description"
+          name="desc"
+        ></textarea>
+  
+        <div class="form-buttons">
+          <button (click)="saveClase()" class="btn save-btn">Guardar</button>
+          <button (click)="cancel()" class="btn cancel-btn">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

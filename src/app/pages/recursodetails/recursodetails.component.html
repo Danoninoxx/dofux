@@ -1,0 +1,17 @@
+<div class="recurso-detail-container">
+    <div class="recurso-detail-card">
+        <button (click)="goBack()" class="back-btn">← Volver</button>
+      <div class="recurso-header">
+        <img 
+          *ngIf="recurso?.image" 
+          [src]="recurso?.image" 
+          [alt]="recurso?.name" 
+          class="recurso-img"
+        />
+        <h1>{{ recurso?.name }}</h1>
+      </div>
+      <p class="recurso-description">
+        {{ recurso?.description }}
+      </p>
+    </div>
+  </div>

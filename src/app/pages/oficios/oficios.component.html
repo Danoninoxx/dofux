@@ -1,0 +1,9 @@
+<div class="oficio-list">
+      <div *ngFor="let oficio of oficios" class="oficio-item" (click)="verDetalle(oficio.id)">
+        <div class="oficio-header">
+          <img *ngIf="oficio.oficio_logo" [src]="oficio.oficio_logo" [alt]="oficio.oficio_name" />
+          <h2>{{ oficio.oficio_name }}</h2>
+        </div>
+        <p>Nivel: 1 a 200</p>
+      </div>
+    </div>

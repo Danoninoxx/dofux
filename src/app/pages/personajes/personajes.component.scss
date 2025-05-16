@@ -1,0 +1,120 @@
+.personajes-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #3f2f2f;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+
+  .personaje-datos {
+    /* Título "Tu Personaje" */
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ffd700;
+    }
+
+    .btn-model {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    
+      &:hover {
+        background-color: #45a049;
+      }
+    }
+
+    /* Imagen del personaje */
+    .clase-img {
+      max-width: 400px;
+      margin: 0 auto 1rem;
+      display: block;
+      border-radius: 8px;
+    }
+
+    /* Campos de nombre, nivel, clase */
+    p {
+      margin: 0.5rem 0;
+      strong {
+        color: #ffd700;
+      }
+    }
+
+    h3 {
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #ffd700;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 400px;
+      text-align: left;
+
+      li {
+        display: flex;               /* Para alinear texto y botón en una línea */
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 4px;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Texto principal (nombre oficio y nivel) */
+        span {
+          margin-right: 8px;
+        }
+
+        /* Ajuste al input de nivel */
+        input {
+          margin-left: 8px;
+          width: 60px;
+        }
+
+        /* Botones Editar / Guardar */
+        button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          font-size: 1rem;
+          padding: 6px 8px;
+          border-radius: 4px;
+          transition: color 0.3s, background 0.3s;
+          color: #ffd700; /* Color dorado por defecto */
+
+          &:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.15);
+          }
+
+          i {
+            pointer-events: none; /* Para que el clic sea del botón completo */
+          }
+        }
+
+        /* Puedes personalizar colores por clase:
+           .btn-edit, .btn-save, etc. */
+        .btn-edit {
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+}
